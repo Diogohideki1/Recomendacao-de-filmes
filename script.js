@@ -445,12 +445,13 @@ async function watch(e) {
         method: 'GET',
         headers: {
           accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YTQwMWRlNGIwNDUxOTMxOWM0OTdiZTBhZDc2OGNjZSIsInN1YiI6IjY0Y2E5NTYwNzA2ZTU2MDBjOWEwMTNiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HH2Jz0eEM1kNGkFhwu08rGQnk9nY2FsZNynwjRlghD0'
+          Authorization: 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YTQwMWRlNGIwNDUxOTMxOWM0OTdiZTBhZDc2OGNjZSIsInN1YiI6IjY0Y2E5NTYwNzA2ZTU2MDBjOWEwMTNiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HH2Jz0eEM1kNGkFhwu08rGQnk9nY2FsZNynwjRlghD0'
         }
       };
 
       try {
-        const data = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos`, options).then(response => response.json())
+        const data = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos`, options)
+        .then(response => response.json())
 
         const { results } = data
 
